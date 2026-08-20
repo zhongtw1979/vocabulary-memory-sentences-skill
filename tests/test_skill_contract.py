@@ -1,6 +1,10 @@
 import re
-import tomllib
 from pathlib import Path
+
+try:
+    import tomllib
+except ModuleNotFoundError:  # Python 3.10
+    import tomli as tomllib
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -43,6 +47,7 @@ def test_package_metadata_supports_clean_installation():
     assert config["project"]["requires-python"] == ">=3.10"
     assert "python-docx>=1.1" in config["project"]["dependencies"]
     assert "pytest>=8" in config["project"]["optional-dependencies"]["dev"]
+    assert 'tomli>=2; python_version < "3.11"' in config["project"]["optional-dependencies"]["dev"]
     assert config["tool"]["pytest"]["ini_options"]["testpaths"] == ["tests"]
 
 
