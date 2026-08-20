@@ -1,0 +1,37 @@
+{
+  "review_id": "language-final",
+  "focus": "language",
+  "artifact_sha256": "d78eb11ca4f3de213ad2c7c441dab8c3b5595603f54744f6d0c490e864e768ad",
+  "completed_at": "2026-08-20T12:00:00Z",
+  "risk_adjudications": [],
+  "sentences": [
+    {
+      "sentence_id": "S001",
+      "verdict": "PASS",
+      "checks": {"grammar_ok": true, "collocation_ok": true, "idiomatic_ok": true, "actor_action_ok": true, "learner_model_ok": true},
+      "target_checks": [],
+      "issues": []
+    },
+    {
+      "sentence_id": "S002",
+      "verdict": "PASS",
+      "checks": {"grammar_ok": true, "collocation_ok": true, "idiomatic_ok": true, "actor_action_ok": true, "learner_model_ok": true},
+      "target_checks": [],
+      "issues": []
+    },
+    {
+      "sentence_id": "S003",
+      "verdict": "PASS",
+      "checks": {"grammar_ok": true, "collocation_ok": true, "idiomatic_ok": true, "actor_action_ok": true, "learner_model_ok": true},
+      "target_checks": [],
+      "issues": []
+    },
+    {
+      "sentence_id": "S004",
+      "verdict": "PASS",
+      "checks": {"grammar_ok": true, "collocation_ok": true, "idiomatic_ok": true, "actor_action_ok": true, "learner_model_ok": true},
+      "target_checks": [],
+      "issues": []
+    }
+  ]
+}

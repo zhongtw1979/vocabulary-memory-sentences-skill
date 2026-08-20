@@ -1,0 +1,13 @@
+entry_id,entry,meaning,entry_type,required_pos,required_sense_zh,allowed_surfaces,metadata_status,source_file,source_page,book,unit,decision,sentence_id
+E001,curious,好奇的,adjective,adjective,好奇的,curious|Curious,ok,synthetic-vocabulary.csv,1,,1,retain,S001
+E002,observe,观察,verb,verb,观察,observe|observes|observed|observing,ok,synthetic-vocabulary.csv,1,,1,retain,S001
+E003,telescope,望远镜,noun,noun,望远镜,telescope|telescopes,ok,synthetic-vocabulary.csv,1,,1,retain,S001
+E004,patient,有耐心的,adjective,adjective,有耐心的,patient|Patient,ok,synthetic-vocabulary.csv,2,,2,retain,S002
+E005,fragrant,芳香的,adjective,adjective,芳香的,fragrant|Fragrant,ok,synthetic-vocabulary.csv,2,,2,retain,S002
+E006,herb,香草,noun,noun,香草,herb|herbs,ok,synthetic-vocabulary.csv,2,,2,retain,S002
+E007,mechanic,机械师,noun,noun,机械师,mechanic|mechanics|Mechanic,ok,synthetic-vocabulary.csv,3,,3,retain,S003
+E008,repair,修理,verb,verb,修理,repair|repairs|repaired|repairing,ok,synthetic-vocabulary.csv,3,,3,retain,S003
+E009,tool,工具,noun,noun,工具,tool|tools,ok,synthetic-vocabulary.csv,3,,3,retain,S003
+E010,reuse,重复使用,verb,verb,重复使用,reuse|reuses|reused|reusing,ok,synthetic-vocabulary.csv,4,,4,retain,S004
+E011,sturdy,结实的,adjective,adjective,结实的,sturdy|sturdier|sturdiest,ok,synthetic-vocabulary.csv,4,,4,retain,S004
+E012,market,市场,noun,noun,市场,market|markets,ok,synthetic-vocabulary.csv,4,,4,retain,S004

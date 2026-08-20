@@ -1,0 +1,68 @@
+{
+  "review_id": "meaning-fact-final",
+  "focus": "meaning_fact",
+  "artifact_sha256": "d78eb11ca4f3de213ad2c7c441dab8c3b5595603f54744f6d0c490e864e768ad",
+  "completed_at": "2026-08-20T12:05:00Z",
+  "risk_adjudications": [
+    {
+      "sentence_id": "S001",
+      "code": "TRANSLATION_RELATION",
+      "status": "resolved",
+      "decision": "accepted",
+      "reason": "Chinese preserves both the telescope-as-instrument relation and the time after sunset."
+    },
+    {
+      "sentence_id": "S004",
+      "code": "TRANSLATION_RELATION",
+      "status": "resolved",
+      "decision": "accepted",
+      "reason": "Chinese preserves the action occurring during the weekly market."
+    }
+  ],
+  "sentences": [
+    {
+      "sentence_id": "S001",
+      "verdict": "PASS",
+      "checks": {"translation_logic_ok": true, "fact_scope_ok": true},
+      "target_checks": [
+        {"entry_id": "E001", "pos_ok": true, "sense_ok": true, "surface_ok": true, "translation_ok": true},
+        {"entry_id": "E002", "pos_ok": true, "sense_ok": true, "surface_ok": true, "translation_ok": true},
+        {"entry_id": "E003", "pos_ok": true, "sense_ok": true, "surface_ok": true, "translation_ok": true}
+      ],
+      "issues": []
+    },
+    {
+      "sentence_id": "S002",
+      "verdict": "PASS",
+      "checks": {"translation_logic_ok": true, "fact_scope_ok": true},
+      "target_checks": [
+        {"entry_id": "E004", "pos_ok": true, "sense_ok": true, "surface_ok": true, "translation_ok": true},
+        {"entry_id": "E005", "pos_ok": true, "sense_ok": true, "surface_ok": true, "translation_ok": true},
+        {"entry_id": "E006", "pos_ok": true, "sense_ok": true, "surface_ok": true, "translation_ok": true}
+      ],
+      "issues": []
+    },
+    {
+      "sentence_id": "S003",
+      "verdict": "PASS",
+      "checks": {"translation_logic_ok": true, "fact_scope_ok": true},
+      "target_checks": [
+        {"entry_id": "E007", "pos_ok": true, "sense_ok": true, "surface_ok": true, "translation_ok": true},
+        {"entry_id": "E008", "pos_ok": true, "sense_ok": true, "surface_ok": true, "translation_ok": true},
+        {"entry_id": "E009", "pos_ok": true, "sense_ok": true, "surface_ok": true, "translation_ok": true}
+      ],
+      "issues": []
+    },
+    {
+      "sentence_id": "S004",
+      "verdict": "PASS",
+      "checks": {"translation_logic_ok": true, "fact_scope_ok": true},
+      "target_checks": [
+        {"entry_id": "E010", "pos_ok": true, "sense_ok": true, "surface_ok": true, "translation_ok": true},
+        {"entry_id": "E011", "pos_ok": true, "sense_ok": true, "surface_ok": true, "translation_ok": true},
+        {"entry_id": "E012", "pos_ok": true, "sense_ok": true, "surface_ok": true, "translation_ok": true}
+      ],
+      "issues": []
+    }
+  ]
+}

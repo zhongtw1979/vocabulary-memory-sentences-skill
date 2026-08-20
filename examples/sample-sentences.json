@@ -1,0 +1,46 @@
+[
+  {
+    "sentence_id": "S001",
+    "scene": "Night sky observation",
+    "english": "Curious students observe bright stars through the telescope after sunset.",
+    "chinese": "好奇的学生在日落后通过望远镜观察明亮的星星。",
+    "targets": [
+      {"entry_id": "E001", "surface": "Curious"},
+      {"entry_id": "E002", "surface": "observe"},
+      {"entry_id": "E003", "surface": "telescope"}
+    ]
+  },
+  {
+    "sentence_id": "S002",
+    "scene": "Kitchen garden",
+    "english": "The patient gardener planted fragrant herbs beside the kitchen window.",
+    "chinese": "耐心的园丁在厨房窗边种下了芳香的香草。",
+    "targets": [
+      {"entry_id": "E004", "surface": "patient"},
+      {"entry_id": "E005", "surface": "fragrant"},
+      {"entry_id": "E006", "surface": "herbs"}
+    ]
+  },
+  {
+    "sentence_id": "S003",
+    "scene": "Bicycle workshop",
+    "english": "A skilled mechanic repaired the bicycle with simple tools today.",
+    "chinese": "一位熟练的机械师今天用简单的工具修好了自行车。",
+    "targets": [
+      {"entry_id": "E007", "surface": "mechanic"},
+      {"entry_id": "E008", "surface": "repaired"},
+      {"entry_id": "E009", "surface": "tools"}
+    ]
+  },
+  {
+    "sentence_id": "S004",
+    "scene": "Community market",
+    "english": "Neighbors reuse sturdy boxes during the weekly community market.",
+    "chinese": "邻居们在每周的社区市场上重复使用结实的箱子。",
+    "targets": [
+      {"entry_id": "E010", "surface": "reuse"},
+      {"entry_id": "E011", "surface": "sturdy"},
+      {"entry_id": "E012", "surface": "market"}
+    ]
+  }
+]
