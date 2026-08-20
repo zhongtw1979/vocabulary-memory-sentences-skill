@@ -188,3 +188,60 @@ def test_false_required_check_fails(tmp_path):
     result = audit_reviews(sentences, [language, meaning])
 
     assert result["checks"]["failed_required_checks"] == 1
+
+
+def test_unadjudicated_linter_flag_fails(tmp_path):
+    sentences, language, meaning = write_artifacts(tmp_path)
+    risk = tmp_path / "risk.json"
+    risk.write_text(
+        json.dumps(
+            {
+                "flags": [
+                    {
+                        "sentence_id": "S001",
+                        "code": "TRANSLATION_RELATION",
+                        "needs_review": True,
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    result = audit_reviews(sentences, [language, meaning], risk_path=risk)
+
+    assert result["checks"]["missing_risk_adjudications"] == 1
+
+
+def test_resolved_linter_flag_is_complete(tmp_path):
+    sentences, language, meaning = write_artifacts(tmp_path)
+    payload = json.loads(meaning.read_text(encoding="utf-8"))
+    payload["risk_adjudications"] = [
+        {
+            "sentence_id": "S001",
+            "code": "TRANSLATION_RELATION",
+            "status": "resolved",
+            "decision": "accepted",
+            "reason": "The translation preserves the relation.",
+        }
+    ]
+    meaning.write_text(json.dumps(payload), encoding="utf-8")
+    risk = tmp_path / "risk.json"
+    risk.write_text(
+        json.dumps(
+            {
+                "flags": [
+                    {
+                        "sentence_id": "S001",
+                        "code": "TRANSLATION_RELATION",
+                        "needs_review": True,
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    result = audit_reviews(sentences, [language, meaning], risk_path=risk)
+
+    assert result["result"] == "PASS"

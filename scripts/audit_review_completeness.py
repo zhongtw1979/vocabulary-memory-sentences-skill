@@ -36,6 +36,8 @@ def load_review(path: str | Path) -> dict[str, Any]:
 def audit_reviews(
     sentences_path: str | Path,
     review_paths: Sequence[str | Path],
+    *,
+    risk_path: str | Path | None = None,
 ) -> dict[str, Any]:
     sentences = read_sentences(sentences_path)
     expected_checksum = artifact_sha256(sentences)
@@ -61,11 +63,13 @@ def audit_reviews(
         "failed_required_checks": 0,
         "incomplete_target_checks": 0,
         "unresolved_blocking_issues": 0,
+        "missing_risk_adjudications": 0,
         "unresolved_risk_adjudications": 0,
         "non_pass_verdicts": 0,
     }
     details: dict[str, list[str]] = {name: [] for name in checks}
 
+    adjudicated_risks: set[tuple[str, str]] = set()
     for review in reviews:
         focus = str(review.get("focus", ""))
         review_id = str(review.get("review_id", focus or "unknown"))
@@ -133,11 +137,29 @@ def audit_reviews(
                     )
 
         for adjudication in review.get("risk_adjudications", []):
+            key = (
+                str(adjudication.get("sentence_id", "")),
+                str(adjudication.get("code", "")),
+            )
+            adjudicated_risks.add(key)
             if str(adjudication.get("status", "")).casefold() != "resolved":
                 checks["unresolved_risk_adjudications"] += 1
                 details["unresolved_risk_adjudications"].append(
                     f'{review_id}:{adjudication.get("sentence_id", "?")}:{adjudication.get("code", "?")}'
                 )
+
+    if risk_path is not None:
+        risk_payload = json.loads(Path(risk_path).read_text(encoding="utf-8"))
+        flagged_risks = {
+            (str(flag.get("sentence_id", "")), str(flag.get("code", "")))
+            for flag in risk_payload.get("flags", [])
+            if flag.get("needs_review") is True
+        }
+        missing_risks = flagged_risks - adjudicated_risks
+        checks["missing_risk_adjudications"] = len(missing_risks)
+        details["missing_risk_adjudications"].extend(
+            f"{sentence_id}:{code}" for sentence_id, code in sorted(missing_risks)
+        )
 
     failures = sum(checks.values())
     return {
@@ -180,13 +202,14 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--sentences", required=True, type=Path)
     parser.add_argument("--reviews", required=True, nargs="+", type=Path)
+    parser.add_argument("--risk-json", type=Path)
     parser.add_argument("--report", type=Path)
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
-    result = audit_reviews(args.sentences, args.reviews)
+    result = audit_reviews(args.sentences, args.reviews, risk_path=args.risk_json)
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)
         args.report.write_text(render_report(result), encoding="utf-8")

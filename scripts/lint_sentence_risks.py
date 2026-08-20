@@ -123,6 +123,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--inventory", required=True, type=Path)
     parser.add_argument("--sentences", required=True, type=Path)
     parser.add_argument("--report", type=Path)
+    parser.add_argument("--json-output", type=Path)
     return parser.parse_args()
 
 
@@ -132,6 +133,12 @@ def main() -> None:
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)
         args.report.write_text(render_report(result), encoding="utf-8")
+    if args.json_output:
+        args.json_output.parent.mkdir(parents=True, exist_ok=True)
+        args.json_output.write_text(
+            json.dumps(result, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
     print(json.dumps(result, ensure_ascii=False))
 
 

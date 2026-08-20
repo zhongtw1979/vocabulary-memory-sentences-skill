@@ -41,11 +41,13 @@ python scripts/audit_sentence_coverage.py \
 python scripts/lint_sentence_risks.py \
   --inventory inventory.csv \
   --sentences sentences.json \
-  --report risk-report.md
+  --report risk-report.md \
+  --json-output risk-report.json
 
 python scripts/audit_review_completeness.py \
   --sentences sentences.json \
   --reviews language-review.json meaning-fact-review.json \
+  --risk-json risk-report.json \
   --report review-completeness.md
 ```
 

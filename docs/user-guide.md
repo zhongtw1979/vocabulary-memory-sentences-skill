@@ -35,7 +35,8 @@ Resolve every exception. This `PASS` proves traceability, not language quality.
 python scripts/lint_sentence_risks.py \
   --inventory inventory.csv \
   --sentences sentences.json \
-  --report risk-report.md
+  --report risk-report.md \
+  --json-output risk-report.json
 ```
 
 Flags identify review questions such as absolute scope, scientific capability, actor ambiguity, and translation relations. A flagged sentence may still be correct.
@@ -70,6 +71,7 @@ Use separate review passes. Do not show reviewers old verdicts or diffs. Follow 
 python scripts/audit_review_completeness.py \
   --sentences sentences.json \
   --reviews language-review.json meaning-fact-review.json \
+  --risk-json risk-report.json \
   --report review-completeness.md
 ```
 

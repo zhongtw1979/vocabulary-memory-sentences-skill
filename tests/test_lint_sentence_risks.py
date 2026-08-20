@@ -1,3 +1,5 @@
+import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -83,3 +85,27 @@ def test_flags_request_review_without_automatic_error_verdict():
     assert result["flags"]
     assert all(flag["needs_review"] is True for flag in result["flags"])
     assert all("verdict" not in flag for flag in result["flags"])
+
+
+def test_cli_writes_machine_readable_risk_json(tmp_path):
+    output = tmp_path / "risk.json"
+
+    subprocess.run(
+        [
+            sys.executable,
+            str(ROOT / "scripts" / "lint_sentence_risks.py"),
+            "--inventory",
+            str(ROOT / "examples" / "sample-inventory.csv"),
+            "--sentences",
+            str(ROOT / "examples" / "sample-sentences.json"),
+            "--json-output",
+            str(output),
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+
+    payload = json.loads(output.read_text(encoding="utf-8"))
+    assert payload["flag_count"] == 2
+    assert all(flag["needs_review"] is True for flag in payload["flags"])

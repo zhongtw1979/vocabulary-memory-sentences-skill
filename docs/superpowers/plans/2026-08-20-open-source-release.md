@@ -492,7 +492,7 @@ python3 -m pytest -q
 python3 scripts/run_example.py --output-dir build/example
 python3 "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-creator/scripts/quick_validate.py" .
 git diff --check
-rg -n "/Users/|ghp_|BEGIN (RSA|OPENSSH|PRIVATE) KEY|\[PLACEHOLDER\]" --glob '!.git/**' .
+rg -n "/Users/|g[h]p_|BEGIN (RSA|OPENSSH|PRIVATE) KEY|\[PLACEHOLDER\]" --glob '!.git/**' .
 git status --short
 ```
 

@@ -51,7 +51,7 @@ def test_public_docs_contain_no_private_paths_or_unfinished_markers():
 
     assert "/Users/" not in combined
     assert "[PLACEHOLDER]" not in combined
-    assert "ghp_" not in combined
+    assert "g" + "hp_" not in combined
 
 
 def test_both_readmes_link_installation_example_and_license():

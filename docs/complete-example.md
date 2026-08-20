@@ -37,7 +37,8 @@ python scripts/audit_sentence_coverage.py \
 python scripts/lint_sentence_risks.py \
   --inventory examples/sample-inventory.csv \
   --sentences examples/sample-sentences.json \
-  --report build/example/risk-report.md
+  --report build/example/risk-report.md \
+  --json-output build/example/risk-report.json
 
 python scripts/build_blind_review_packet.py \
   --inventory examples/sample-inventory.csv \
@@ -54,6 +55,7 @@ python scripts/build_blind_review_packet.py \
 python scripts/audit_review_completeness.py \
   --sentences examples/sample-sentences.json \
   --reviews examples/reviews/language-review.json examples/reviews/meaning-fact-review.json \
+  --risk-json build/example/risk-report.json \
   --report build/example/review-completeness.md
 
 python scripts/build_bilingual_docx.py \

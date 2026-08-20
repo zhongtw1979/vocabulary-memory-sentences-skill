@@ -26,7 +26,9 @@ def test_complete_example_pipeline_passes_without_mutating_fixtures(tmp_path):
 
     coverage = audit(inventory, sentences)
     risk = lint_records(read_sentences(sentences), read_inventory(inventory))
-    review = audit_reviews(sentences, reviews)
+    risk_json = tmp_path / "risk.json"
+    risk_json.write_text(json.dumps(risk, ensure_ascii=False), encoding="utf-8")
+    review = audit_reviews(sentences, reviews, risk_path=risk_json)
 
     assert coverage["result"] == "PASS"
     assert coverage["inventory_count"] == 12

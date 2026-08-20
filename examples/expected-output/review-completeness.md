@@ -17,6 +17,7 @@
 | failed_required_checks | 0 |
 | incomplete_target_checks | 0 |
 | unresolved_blocking_issues | 0 |
+| missing_risk_adjudications | 0 |
 | unresolved_risk_adjudications | 0 |
 | non_pass_verdicts | 0 |
 

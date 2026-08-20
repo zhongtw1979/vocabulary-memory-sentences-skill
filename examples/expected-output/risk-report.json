@@ -1,0 +1,25 @@
+{
+  "result": "REVIEW_REQUIRED",
+  "sentence_count": 4,
+  "flag_count": 2,
+  "counts_by_code": {
+    "TRANSLATION_RELATION": 2
+  },
+  "flags": [
+    {
+      "sentence_id": "S001",
+      "code": "TRANSLATION_RELATION",
+      "severity_hint": "P1",
+      "message": "Check that the Chinese preserves path, direction, time, or logical relation.",
+      "needs_review": true
+    },
+    {
+      "sentence_id": "S004",
+      "code": "TRANSLATION_RELATION",
+      "severity_hint": "P1",
+      "message": "Check that the Chinese preserves path, direction, time, or logical relation.",
+      "needs_review": true
+    }
+  ],
+  "note": "Flags require adjudication and are not automatic error verdicts."
+}

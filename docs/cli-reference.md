@@ -21,10 +21,10 @@ Exit code is `1` when structural checks fail.
 ## Risk linter
 
 ```bash
-python scripts/lint_sentence_risks.py --inventory FILE --sentences FILE [--report FILE]
+python scripts/lint_sentence_risks.py --inventory FILE --sentences FILE [--report FILE] [--json-output FILE]
 ```
 
-The command exits successfully even when flags exist because flags require adjudication and are not automatic errors.
+The command exits successfully even when flags exist because flags require adjudication and are not automatic errors. Use `--json-output` when the review-completeness audit must verify that every flag was adjudicated.
 
 ## Blind-review packet
 
@@ -43,10 +43,11 @@ The same seed and artifacts produce the same packet order and checksum.
 python scripts/audit_review_completeness.py \
   --sentences FILE \
   --reviews LANGUAGE_JSON MEANING_JSON \
+  [--risk-json RISK_JSON] \
   [--report FILE]
 ```
 
-Exit code is `1` for missing focus, stale checksum, incomplete coverage, failed checks, unresolved blocking issues, or non-pass final verdicts.
+Exit code is `1` for missing focus, stale checksum, incomplete coverage, failed checks, missing risk adjudications, unresolved blocking issues, or non-pass final verdicts.
 
 ## DOCX builder
 
