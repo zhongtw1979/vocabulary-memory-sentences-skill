@@ -1,0 +1,90 @@
+[
+  {
+    "sentence_id": "S001",
+    "scene": "Catering",
+    "english": "The chef chose friendly waiters to prepare the wedding cake.",
+    "chinese": "厨师为了准备婚礼蛋糕，挑选了友善的服务员。",
+    "targets": [
+      {"entry_id": "E001", "surface": "chef"},
+      {"entry_id": "E002", "surface": "waiters"},
+      {"entry_id": "E003", "surface": "prepare"}
+    ]
+  },
+  {
+    "sentence_id": "S002",
+    "scene": "Cybersecurity",
+    "english": "The analyst designed a reliable test to identify every network threat.",
+    "chinese": "分析师设计了一种可靠的检测方法，用来识别每一个网络威胁。",
+    "targets": [
+      {"entry_id": "E004", "surface": "analyst"},
+      {"entry_id": "E005", "surface": "test"},
+      {"entry_id": "E006", "surface": "threat"}
+    ]
+  },
+  {
+    "sentence_id": "S003",
+    "scene": "Dog training",
+    "english": "The puppy carried the toy through the gate during training.",
+    "chinese": "小狗训练时叼着玩具越过了大门。",
+    "targets": [
+      {"entry_id": "E007", "surface": "puppy"},
+      {"entry_id": "E008", "surface": "through"},
+      {"entry_id": "E009", "surface": "gate"}
+    ]
+  },
+  {
+    "sentence_id": "S004",
+    "scene": "School administration",
+    "english": "The school adopted a social policy to support new students.",
+    "chinese": "学校采用了一项社会政策来支持新生。",
+    "targets": [
+      {"entry_id": "E010", "surface": "social"},
+      {"entry_id": "E011", "surface": "policy"},
+      {"entry_id": "E012", "surface": "support"}
+    ]
+  },
+  {
+    "sentence_id": "S005",
+    "scene": "Food preparation",
+    "english": "The butcher selected soft meat that was easy to slice.",
+    "chinese": "肉贩挑选了容易切片的软肉。",
+    "targets": [
+      {"entry_id": "E013", "surface": "butcher"},
+      {"entry_id": "E014", "surface": "soft"},
+      {"entry_id": "E015", "surface": "slice"}
+    ]
+  },
+  {
+    "sentence_id": "S006",
+    "scene": "Hospital ward",
+    "english": "The careful nurse recorded each temperature before the morning round.",
+    "chinese": "细心的护士在早晨巡视前记录了每个体温读数。",
+    "targets": [
+      {"entry_id": "E016", "surface": "careful"},
+      {"entry_id": "E017", "surface": "temperature"},
+      {"entry_id": "E018", "surface": "round"}
+    ]
+  },
+  {
+    "sentence_id": "S007",
+    "scene": "Recycling",
+    "english": "The factory reused waste material to reduce its environmental impact.",
+    "chinese": "工厂重复使用废料，以减少对环境的影响。",
+    "targets": [
+      {"entry_id": "E019", "surface": "reused"},
+      {"entry_id": "E020", "surface": "material"},
+      {"entry_id": "E021", "surface": "impact"}
+    ]
+  },
+  {
+    "sentence_id": "S008",
+    "scene": "Sports camp",
+    "english": "The coach trained each runner in hygienic conditions before breakfast.",
+    "chinese": "教练在早餐前于卫生条件下训练每位跑步者。",
+    "targets": [
+      {"entry_id": "E022", "surface": "coach"},
+      {"entry_id": "E023", "surface": "runner"},
+      {"entry_id": "E024", "surface": "hygienic"}
+    ]
+  }
+]

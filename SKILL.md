@@ -35,3 +35,10 @@ Turn a visible vocabulary source into a traceable inventory, natural bilingual s
 - The DOCX passes archive, text, count, bilingual-alignment, and target-emphasis checks.
 
 `CLEAN PASS` means no blocking issue was found under the required review dimensions. It does not mean that no stylistic alternative exists.
+
+## Resources
+
+- Read [the quality standard](references/quality-standard.md) before composing or revising a dataset.
+- Use [the review rubric](references/review-rubric.md) for both independent final passes.
+- Consult [the failure library](references/failure-library.md) when calibrating reviewers or deciding whether to regroup.
+- Follow [the data schema](references/data-schema.md) for interoperable inventory, sentence, and review artifacts.
