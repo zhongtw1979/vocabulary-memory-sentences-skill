@@ -1,0 +1,26 @@
+name: Feature request
+description: Propose a focused improvement to the public workflow.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: Describe the observable limitation without prescribing a large solution.
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Synthetic example
+      description: Show a privacy-safe input and desired outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: quality
+    attributes:
+      label: Quality and compatibility impact
+      description: Explain schema, review, documentation, or backward-compatibility effects.
+    validations:
+      required: true
