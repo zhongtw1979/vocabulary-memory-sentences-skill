@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vocabulary Memory Sentences"
+  short_description: "Build audited bilingual memory sentences from vocabulary lists"
+  default_prompt: "Use $building-vocabulary-memory-sentences to turn this vocabulary list into deduplicated bilingual memory sentences and a verified study handout."
